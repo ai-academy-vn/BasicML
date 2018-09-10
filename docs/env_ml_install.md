@@ -1,4 +1,4 @@
-# Cài đặt môi trường và thư viện cho Machine Learning
+﻿# Cài đặt môi trường và thư viện cho Machine Learning
 
 # Python
 
@@ -167,4 +167,35 @@ Nếu quá trình cài tensorflow-gpu thành công, màn hình *cmd* sẽ hiển
 
 ![enter image description here](https://lh3.googleusercontent.com/VE3q82dPKsKRJOFI8zY_xEemb-vV5Bt3V5uXzaHDP2nEBlJLiaOtQdikCxE4XlpxMsc4EwaqqiSW)
 
+## Keras
+Keras được phát triển bởi Francois Chollet, một kỹ sư của Google. Thư viện này được xem như "high-level" API cho deep learning, định nghĩa sẵn gần như toàn bộ các layer thông dụng. Bên dưới nó là phần "low-level" API thuộc thư viện tensorflow, theano hay gần đây là CNTK. Hoặc nói cách khác, Keras như là một **Wrapper** bên ngoài các thư viện machine learning kể trên. Sử dụng Keras giúp cho người dùng xây dựng network hết sức dễ dàng, không cần phải quan tâm đến các khái niệm phức tạp như ***computational graph, session, etc***. Tuy vậy, vì là high-level API, Việc tùy chỉnh các layers hay định nghĩa các hàm mục tiêu phức tạp trên Keras là không dễ dàng.
+Trong các phiên bản gần đây, Tensorflow đã tích hợp sẵn Keras trong module **tf.keras** như là một gói API bậc cao của mình. Điều này không những hết sức thuận tiện cho người dùng, mà còn là tiền đề của rất nhiều gói API bậc cao vô cùng hữu dụng của Tensorflow dựa trên nền tảng Keras.
+Trong trường hợp sử dụng các phiên bản Tensorflow cũ hoặc dùng backend là các thư viện như Theano hay CNTK, việc cài đặt riêng biệt Keras là cần thiết. Cài đặt sử dụng PIP như sau:
+
+    >pip install keras
+Keras mặc định sử dụng Tensorflow làm backend. 
+## PyTorch
+PyTorch là thư viện machine learning mã nguồn mở được phát triển chủ yếu bởi Facebook AI Research. PyTorch cung cấp hai tính năng nổi bật:
+
+ - Cung cấp các hàm tính toán trên ***Tensor*** (như cách mà numpy tính toán trên ma trận) với khả năng tăng tốc độ dựa trên sử dụng GPU. Khái niệm Tensor trên PyTorch tương đồng với Matrix trên numpy
+ - Deep Neural Networks xây dựng trên hệ thống *tape-based autodiff*
+ 
+Điểm nổi bật của PyTorch là khả năng tính toán ngay lập tức (khác biệt với TensorFlow, mặc dù Eager mode mới ra mắt của TF hướng tới khả năng này). Điều này phù hợp với triết lý lập trình trên Python và thuận tiện cho việc debug mã nguồn.
+
+PyTorch cung cấp:
+
+ - API dễ sử dụng
+ - Tích hợp mượt mà với Python và các gói thư viện dành cho Data Sciense. PyTorch quá tương đồng với Numpy, đến mức bạn còn không chú ý đến sự khác biệt
+ - Graph tính toán động. Thay bằng tính toán dựa trên graph được định nghĩa trước, PyTorch cung cấp khả năng xây dựng và điều chỉnh graph thậm chí trong run-time
+
+Một lợi điểm của PyTorch nữa là khả năng tính toán trên multi GPUs, custom data loader và tiền xử lý dữ liệu.
+
+Cài đặt PyTorch là tương đối dễ dàng cho mọi nền tảng hoặc trên môi trường ảo. Để cài đặt, truy cập vào trang chủ  [PyTorch](https://pytorch.org/), chọn nền tảng sử dụng, sau đó chọn trình quản lý package, phiên bản Python và phiên bản CUDA (trong trường hợp sử dụng GPU).
+
+![enter image description here](https://lh3.googleusercontent.com/08k-cpU2Ju1QaFCAYUzY4Q_kf4n8miW3xiHREk6LH6IVl6UclHfbLhXGeeA2LX9KHwVjZ_J9nFck)
+
+Ví dụ với hình minh họa phía trên để tiến hành cài đặt PyTorch trên Windows, sử dụng trình quản lý package PIP, phiên bản Python 3.6 và CUDA 9.0. Việc còn lại là copy đoạn mã trong "Run this command" và chạy lệnh đã copy trên command line. Cụ thể là:
+
+    pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp36-cp36m-win_amd64.whl  
+    pip3 install torchvision
 
