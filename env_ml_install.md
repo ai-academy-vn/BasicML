@@ -199,3 +199,21 @@ Ví dụ với hình minh họa phía trên để tiến hành cài đặt PyTor
     pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp36-cp36m-win_amd64.whl  
     pip3 install torchvision
 
+## OpenCV
+
+OpenCV là thư viện mã nguồn mở cho xử lý ảnh và thị giác máy, được cài đặt sẵn rất nhiều giải thuật. Thông thường thư viện này đều đặn có bản cập nhật lớn mỗi năm, luôn luôn cập nhật các giải thuật mới. Từ phiên bản 3.4 trở lại đây, thậm chí OpenCV còn được đóng gói sẵn các thuật toán Deep Learning dành cho thị giác máy.
+
+Phát triển ban đầu bởi Intel, thư viện này đến nay đã trải qua gần 20 năm phát triển và cập nhật, trở thành một thư viện nguồn mở nổi tiếng hàng đầu. OpenCV được sử dụng rộng rãi trong công nghiệp cũng như môi trường nghiên cứu.
+
+Được phát triển trên ngôn ngữ C, C++ và cung cấp API Python, Ruby, Matlab, và một số ngôn ngữ khác.
+
+Để cài đặt OpenCV cho môi trường Python, cách đơn giản nhất là sử dụng gói opencv-python (unofficial), cài đặt qua pip:
+
+    pip install opencv-python
+
+Một số tính năng mới, chưa đủ ổn định hoặc vì một lý do nào đó mà chưa được tích hợp vào phần core của thư viện sẽ được phát hành riêng thông qua gói contributes. Trong trường hợp cần sử dụng các tính năng trong gói contributes, cần cài đặt:
+
+    pip install opencv-contrib-python
+    
+Hoặc với môi trường Windows có thể download file wheel tại:
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
